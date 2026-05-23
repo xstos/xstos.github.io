@@ -20,10 +20,11 @@
 <div id="thing"></div>
 <br/>
 total:<span id="totale">0</span>
-<button onclick="location.reload();">RESET</button>
+<button onclick="reset();">RESET</button>
 <script>
     var data = `
 Arugula:4.25
+Cabbage (green):6
 Cucumbers (lebanese):5.5
 Green onions(early season):3
 Green onions(small bunch):2.5
@@ -62,7 +63,7 @@ Sunchokes:6
             total+=price
         }
         amountel.innerText=num
-        totale.innerHTML=total
+        totale.innerText=total
     }
 
 
@@ -73,6 +74,13 @@ Sunchokes:6
             var markup = row(name,price,i)
             return markup
         });
+    function reset() {
+        total=0
+        document.getElementById("totale").innerText=0;
+        for (let i = 0; i < data.length; i++) {
+            document.getElementById(`item_${i}`).innerText=0;
+        }
+    }
     thing.innerHTML=data.join("<br/>");
 </script>
 </body>
