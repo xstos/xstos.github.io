@@ -6,13 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Veghead Calculator</title>
     <style>
+        button {
+            margin-top: 1ch;
+            min-height: 4ch;
+            min-width:  4ch;
+        }
     </style>
 </head>
 <body>
 <div id="thing"></div>
 <br/>
 total:<span id="totale">0</span>
-<button onclick="location.reload();">reset</button>
+<button onclick="location.reload();">RESET</button>
 <script>
     var data = `
 Arugula:4.25
@@ -36,10 +41,12 @@ Sunchokes:6
     var total =0;
 
     function row(name,price, index) {
-        return `<span style="line-height: 2">${name} ${price}$</span>
+        return `
+<span id="item_${index}">0</span>
+<span style="">${name} ${price}$</span>
 <button onclick="btnclick(1,${price},${index})">+</button>
 <button onclick="btnclick(-1,${price},${index})">-&nbsp</button>
-QTY: <span id="item_${index}">0</span>`
+`
     }
     function btnclick(up, price,index) {
         var amountel = document.getElementById("item_"+index)
