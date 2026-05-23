@@ -8,6 +8,7 @@
     <style>
         body {
             font-family: 'Verdana', sans-serif;
+            letter-spacing: 0px;
         }
         button {
             margin-top: 1ch;
@@ -24,7 +25,6 @@ total:<span id="totale">0</span>
 <script>
     var data = `
 Arugula:4.25
-Cabbage (green):6
 Cucumbers (lebanese):5.5
 Green onions(early season):3
 Green onions(small bunch):2.5
@@ -65,7 +65,6 @@ Sunchokes:6
         amountel.innerText=num
         totale.innerText=total
     }
-
 
     data = data.trim()
         .split("\n")
